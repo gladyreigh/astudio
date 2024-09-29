@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Neutra+Text&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Neutra Text', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #ebebeb;
+  color: #322625;
+}
+
+.blue-bg {
+  background-color: #c0e3e5;
+}
+
+.yellow-bg {
+  background-color: #fdc936;
+}

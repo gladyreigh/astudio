@@ -1,0 +1,218 @@
+/* App.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --color-black: #322625;
+  --color-grey: #ebebeb;
+  --color-blue: #c0e3e5;
+  --color-yellow: #fdc936;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-grey);
+  color: var(--color-black);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: var(--color-black);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+  color: var(--color-yellow);
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-grey);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li a {
+  color: var(--color-grey);
+  text-decoration: none;
+  font-weight: 300;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-menu li a:hover {
+  color: var(--color-yellow);
+}
+
+.main-content {
+  flex-grow: 1;
+  padding: 2rem;
+  background-color: white;
+  margin: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  background-color: var(--color-blue);
+  color: var(--color-black);
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+h1, h2, h3 {
+  color: var(--color-black);
+}
+
+button {
+  background-color: var(--color-yellow);
+  color: var(--color-black);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #e6b62e;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+input, select {
+  border: 1px solid var(--color-grey);
+  border-radius: 4px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, select:focus {
+  outline: none;
+  border-color: var(--color-yellow);
+  box-shadow: 0 0 0 2px rgba(253, 201, 54, 0.2);
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin-top: 1rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-grey);
+}
+
+th {
+  background-color: var(--color-blue);
+  color: var(--color-black);
+  position: sticky;
+  top: 0;
+}
+
+tr:hover {
+  background-color: rgba(192, 227, 229, 0.1);
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navbar-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--color-black);
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .navbar-menu.open {
+    display: flex;
+  }
+
+  .main-content {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 0.5rem;
+  }
+}
+
+/* Cool animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.main-content {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.navbar-menu li a {
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar-menu li a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-yellow);
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.navbar-menu li a:hover::after {
+  transform: translateX(0);
+}
+
+
